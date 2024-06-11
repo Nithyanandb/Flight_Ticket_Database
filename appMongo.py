@@ -7,6 +7,7 @@ db = client.flight_ticket_database
 flights_collection = db.flights
 users_collection = db.users
 
+# Flight Information Display System (FIDS) 
 def display_available_flights():
     available_flights = list(flights_collection.find({}, {"_id": 0, "flight_number": 1, "origin": 1, "destination": 1, "price": 1, "available_seats": 1}))
     if available_flights:
